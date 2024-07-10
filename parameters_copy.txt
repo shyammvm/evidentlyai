@@ -1,0 +1,7 @@
+ref_filename=regression\\housing_ref.csv
+cur_filename=regression\\housing_cur.csv
+target=target
+prediction=prediction
+model_type=regression
+numerical=MedInc,HouseAge,AveRooms,AveBedrms,Population,AveOccup,Latitude,Longitude	
+categorical=
