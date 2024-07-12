@@ -23,15 +23,19 @@ from evidently.metric_preset import DataDriftPreset, TargetDriftPreset, DataQual
 class Reports:
     
     def __init__(self, ref_file, cur_file, target, prediction, numerical_columns, categorical_columns, type) -> None:
-        dataset_path = os.path.join('..', 'data\\dataset')
-        self.ref_file = os.path.join(dataset_path, ref_file)
-        print(self.ref_file)
-        self.cur_file = os.path.join(dataset_path, cur_file)
+        dataset_path = os.path.join('..', 'data', 'dataset')
+        self.ref_file = pd.read_csv(os.path.join(dataset_path, ref_file))
+        self.cur_file = pd.read_csv(os.path.join(dataset_path, cur_file))
         self.target = target
         self.prediction = prediction
         self.numerical_cols = numerical_columns
         self.categorical_cols = categorical_columns
         self.type = type
+    
+    def db_check(self):
+        if self.ref_file.shape != self.cur_file.shape:
+            raise ValueError('Make sure the databases have the same shape')
+        return True
 
     def columnmapping(self):
         columnmapping = ColumnMapping()
@@ -58,14 +62,14 @@ class Reports:
             column_mapping = self.columnmapping()
         )
         return regression_performance_report
-    
-
+  
     def get_report(self):
         if self.type == 'binary_classification':
-            report = self.classification_performance_report_generator()
+            if self.db_check():
+                report = self.classification_performance_report_generator()
         elif self.type == 'regression':
-            report = self.regression_performance_report_generator()       
+            if self.db_check():
+                report = self.regression_performance_report_generator()       
         reportname = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + '.json'
-        report_path = os.path.join(os.getcwd(), '..', 'reports', reportname)
+        report_path = os.path.join('..', 'data', 'reports', reportname)
         report.save_json(report_path)
-        # return report

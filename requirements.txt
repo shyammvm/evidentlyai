@@ -1,2 +1,2 @@
 evidently
-ipykernal
+ipykernel

@@ -1,5 +1,5 @@
-ref_filename=classification\bcancer_label_ref.csv
-cur_filename=classification\bcancer_label_cur.csv
+ref_filename=bcancer_label_ref.csv
+cur_filename=bcancer_label_cur.csv
 target=target
 prediction=prediction
 model_type=binary_classification
