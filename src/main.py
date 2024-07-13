@@ -12,8 +12,6 @@ def main():
     report_obj = Reports(folder=folder, cur_file=cur_filename, ref_file=ref_filename, target=target, prediction=prediction, numerical_columns=numerical_columns, categorical_columns=categorical_columns, type=type)
     report = report_obj.get_report()
     report_obj.save_report(report)
-    print(report)
-
 
 if __name__ == "__main__":
     main()
