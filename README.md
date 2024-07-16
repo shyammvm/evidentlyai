@@ -30,29 +30,33 @@ Navigate to the data directory and edit the parameter.yaml file to include all t
 <b>numerical_columns:</b> Columns containing numerical values<br>
 <b>categorical_columns:</b> Columns containing categorical values<br>
 
+you can create multiple inputs by mentioning different folder names and their corresponding values
+
 ### Example Configuration (parameter.yaml)
 ```
-folder: "adult"
-target: "income"
-prediction: "predicted_income"
-report_type: "data_quality"
-numerical_columns:
-  - "age"
-  - "fnlwgt"
-  - "education-num"
-  - "capital-gain"
-  - "capital-loss"
-  - "hours-per-week"
-categorical_columns:
-  - "workclass"
-  - "education"
-  - "marital-status"
-  - "occupation"
-  - "relationship"
-  - "race"
-  - "sex"
-  - "native-country"
-  - "class"
+  - folder: "adult"
+    target: "income"
+    prediction: "predicted_income"
+    report_type: "data_quality"
+    numerical_columns:
+      - "age"
+      - "fnlwgt"
+      - "education-num"
+      - "capital-gain"
+      - "capital-loss"
+      - "hours-per-week"
+    categorical_columns:
+      - "workclass"
+      - "education"
+      - "marital-status"
+      - "occupation"
+      - "relationship"
+      - "race"
+      - "sex"
+      - "native-country"
+      - "class"
+  - folder :
+    ------
 ```
 ### Ensure Consistency:
 Verify that both the current and reference datasets have the same columns.

@@ -7,10 +7,10 @@ import yaml
 class File_details:
 
     def __init__(self, parameters_path) -> None:
-        self.parameters_path = parameters_path
+        self.parameters_path = parameters_path #the path to the parameters.yaml file
         self.parameters = self.load_parameters()
 
-    def load_parameters(self):
+    def load_parameters(self): #read the details from the parameters.yaml file as a dictionary
         with open(self.parameters_path, 'r') as file:
             return yaml.safe_load(file)
     
@@ -18,7 +18,7 @@ class File_details:
         # Define paths to 'current' and 'reference' folders
         parent_folder = os.path.join('..', 'data', 'dataset', folder)
         current_folder = os.path.join(parent_folder, 'current')
-        reference_folder = os.path.join(parent_folder, 'reference')
+        reference_folder = os.path.join(parent_folder, 'reference') 
 
         # Check if 'current' and 'reference' folders exist
         if not os.path.isdir(current_folder):
