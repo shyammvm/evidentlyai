@@ -14,9 +14,9 @@ class File_details:
         with open(self.parameters_path, 'r') as file:
             return yaml.safe_load(file)
     
-    def get_csv_paths(self):
+    def get_csv_paths(self, folder):
         # Define paths to 'current' and 'reference' folders
-        parent_folder = os.path.join('..', 'data', 'dataset', self.parameters['folder'])
+        parent_folder = os.path.join('..', 'data', 'dataset', folder)
         current_folder = os.path.join(parent_folder, 'current')
         reference_folder = os.path.join(parent_folder, 'reference')
 
@@ -37,15 +37,17 @@ class File_details:
         return current_csv_file[0], reference_csv_file[0]
 
     def get_input(self):
-
+        inputs = []
         # Access the parameters
-        folder = self.parameters['folder']
-        cur_filename, ref_filename = self.get_csv_paths()
-        target = self.parameters['target']
-        prediction = self.parameters['prediction']
-        type = self.parameters['report_type']
-        numerical_columns = self.parameters['numerical_columns']
-        categorical_columns = self.parameters['categorical_columns']
-        return folder, ref_filename, cur_filename, target, prediction, type, numerical_columns, categorical_columns
+        for config in self.parameters:
+            folder = config['folder']
+            cur_filename, ref_filename = self.get_csv_paths(folder)
+            target = config['target']
+            prediction = config['prediction']
+            type = config['report_type']
+            numerical_columns = config['numerical_columns']
+            categorical_columns = config['categorical_columns']
+            inputs.append((folder, ref_filename, cur_filename, target, prediction, type, numerical_columns, categorical_columns))
+        return inputs
 
 

@@ -92,7 +92,7 @@ class Reports:
 
     def save_report(self, report):
         reportname = self.folder + '_' + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + '.json'
-        report_folder = os.path.join('..', 'data', 'dataset', self.folder, 'reports')
+        report_folder = os.path.join('..', 'data', 'reports', self.folder)
         if not os.path.exists(report_folder):
             os.makedirs(report_folder)
         report_path = os.path.join(report_folder, reportname)
