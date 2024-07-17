@@ -1,8 +1,6 @@
 # Evidently AI POC
 ## Overview
-This project demonstrates the use of Evidently AI for generating various types of reports based on your datasets. Evidenlty AI helps evaluate, test and monitor data and ML powered systems. Evidently AI reports compute different metrics on data and ML quality. You can use Reports for visual analysis and debugging, or as a computation layer for the monitoring dashboard. Below are  the reports that can be generated using this project.
-
-# Model Evaluation and Data Quality Metrics
+This project demonstrates the use of Evidently AI for generating various types of reports based on your datasets. Evidently AI helps evaluate, test, and monitor data and machine learning (ML) systems. Evidently AI reports compute different metrics on data and ML quality, facilitating visual analysis and debugging, as well as serving as a computational layer for monitoring dashboards. The reports are saved in .json format, making them easy to visualize with tools like Tableau. Below are the types of reports that can be generated using this project:
 
 | **Metric**          | **Description**                                      | **Requirements**                       |
 |---------------------|------------------------------------------------------|----------------------------------------|
@@ -12,10 +10,13 @@ This project demonstrates the use of Evidently AI for generating various types o
 | **Classification**  | Evaluates the classification model quality and errors.| Model predictions and true labels      |
 | **Regression**      | Evaluates the regression model quality and errors.   | Model predictions and actuals          |
 
-
-Follow the steps below to set up the project and generate the reports.
+### The following diagram shows how evidently uses CURRENT and REFERENCE datasets to generate reports:
+<br>
+<img src='evidently_report_gen_proc.avif'>
+<br>
 
 ## Setup Instructions
+Follow the steps below to set up the project and generate the reports.
 
 ### Copy the Dataset Folder:
 Copy your dataset folder to the data/dataset directory.
@@ -113,9 +114,10 @@ evidentlyai/
 - PyYAML library<br>
 - glob library<br>
 
-Install Dependencies
+### Install Dependencies
+In the root folder of the project, run the following command
 
-<code>pip install pandas pyyaml glob2</code>
+<code>pip install -r requirements.txt</code>
 
 ### Script Descriptions
 <code>src/main.py</code>
