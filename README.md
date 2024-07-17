@@ -1,6 +1,19 @@
 # Evidently AI POC
 ## Overview
-This project demonstrates the use of Evidently AI for generating various types of reports based on your datasets. Follow the steps below to set up the project and generate the reports.
+This project demonstrates the use of Evidently AI for generating various types of reports based on your datasets. Evidenlty AI helps evaluate, test and monitor data and ML powered systems. Evidently AI reports compute different metrics on data and ML quality. You can use Reports for visual analysis and debugging, or as a computation layer for the monitoring dashboard. Below are  the reports that can be generated using this project.
+
+# Model Evaluation and Data Quality Metrics
+
+| **Metric**          | **Description**                                      | **Requirements**                       |
+|---------------------|------------------------------------------------------|----------------------------------------|
+| **Data Quality**    | Shows the dataset statistics and feature behavior.   | Model inputs                           |
+| **Data Drift**      | Explores the distribution shift in the model features.| Model inputs, a reference dataset      |
+| **Target Drift**    | Explores the distribution shift in the model predictions or target.| Model predictions and/or target, a reference dataset |
+| **Classification**  | Evaluates the classification model quality and errors.| Model predictions and true labels      |
+| **Regression**      | Evaluates the regression model quality and errors.   | Model predictions and actuals          |
+
+
+Follow the steps below to set up the project and generate the reports.
 
 ## Setup Instructions
 
