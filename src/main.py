@@ -6,7 +6,7 @@ def main():
     #get input parameters
     parameters_path = os.path.join('..', 'data', 'parameters.yaml')
     input_details = File_details(parameters_path) # initialize the file parameters processing class
-    inputs = input_details.get_input() # get inputs as a list
+    inputs = input_details.get_input() # get inputs as a list of lists, each element contains the details of each dataset
 
     #get report
     for input in inputs: #iterate over all the input datasets

@@ -3,10 +3,12 @@ import numpy as np
 import os
 import datetime
 
-from sklearn import datasets, ensemble, model_selection
+# from sklearn import datasets, ensemble, model_selection
 
 from evidently import ColumnMapping
 from evidently.test_suite import TestSuite
+
+# Include below imports when working with tests
 
 # from evidently.test_preset import NoTargetPerformanceTestPreset
 # from evidently.test_preset import DataQualityTestPreset
@@ -32,7 +34,10 @@ class Reports:
         self.categorical_cols = categorical_columns
         self.type = type
     
-    def db_check(self): #check if the columns of the current and reference files are the same
+    def db_check(self): 
+        '''
+        Desc: check if the columns of the current and reference files are the same
+        '''
         if list(self.ref_file.columns) != list(self.cur_file.columns):
             raise ValueError("Make sure the databases have the same columns")
         return True

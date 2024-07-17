@@ -10,6 +10,11 @@ This project demonstrates the use of Evidently AI for generating various types o
 | **Classification**  | Evaluates the classification model quality and errors.| Model predictions and true labels      |
 | **Regression**      | Evaluates the regression model quality and errors.   | Model predictions and actuals          |
 
+### The following diagram shows how evidently uses CURRENT and REFERENCE datasets to generate reports:
+<br>
+<img src='evidently_report_gen_proc.avif'>
+<br>
+
 ## Setup Instructions
 Follow the steps below to set up the project and generate the reports.
 
