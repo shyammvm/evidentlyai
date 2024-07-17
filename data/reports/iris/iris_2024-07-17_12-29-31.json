@@ -1,0 +1,170 @@
+{
+    "version": "0.4.30",
+    "metrics": [
+        {
+            "metric": "ClassificationQualityMetric",
+            "result": {
+                "current": {
+                    "accuracy": 0.9333333333333333,
+                    "precision": 0.935273368606702,
+                    "recall": 0.9296833064949007,
+                    "f1": 0.9300267065368718,
+                    "roc_auc": null,
+                    "log_loss": null,
+                    "tpr": null,
+                    "tnr": null,
+                    "fpr": null,
+                    "fnr": null
+                },
+                "reference": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0,
+                    "roc_auc": null,
+                    "log_loss": null,
+                    "tpr": null,
+                    "tnr": null,
+                    "fpr": null,
+                    "fnr": null
+                },
+                "target_name": "target"
+            }
+        },
+        {
+            "metric": "ClassificationClassBalance",
+            "result": {}
+        },
+        {
+            "metric": "ClassificationConfusionMatrix",
+            "result": {
+                "current_matrix": {
+                    "labels": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "values": [
+                        [
+                            25,
+                            0,
+                            0
+                        ],
+                        [
+                            3,
+                            19,
+                            1
+                        ],
+                        [
+                            0,
+                            1,
+                            26
+                        ]
+                    ]
+                },
+                "reference_matrix": {
+                    "labels": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "values": [
+                        [
+                            29,
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            25,
+                            0
+                        ],
+                        [
+                            0,
+                            0,
+                            21
+                        ]
+                    ]
+                },
+                "target_names": null
+            }
+        },
+        {
+            "metric": "ClassificationQualityByClass",
+            "result": {
+                "columns": {
+                    "utility_columns": {
+                        "date": null,
+                        "id": null,
+                        "target": "target",
+                        "prediction": "prediction"
+                    },
+                    "num_feature_names": [
+                        "petal length (cm)",
+                        "petal width (cm)",
+                        "sepal length (cm)",
+                        "sepal width (cm)"
+                    ],
+                    "cat_feature_names": [],
+                    "text_feature_names": [],
+                    "datetime_feature_names": [],
+                    "target_names": null
+                },
+                "current": {
+                    "metrics": {
+                        "0": {
+                            "precision": 0.8928571428571429,
+                            "recall": 1.0,
+                            "f1": 0.9433962264150944,
+                            "support": 25.0
+                        },
+                        "1": {
+                            "precision": 0.95,
+                            "recall": 0.8260869565217391,
+                            "f1": 0.8837209302325582,
+                            "support": 23.0
+                        },
+                        "2": {
+                            "precision": 0.9629629629629629,
+                            "recall": 0.9629629629629629,
+                            "f1": 0.9629629629629629,
+                            "support": 27.0
+                        }
+                    },
+                    "roc_aucs": null
+                },
+                "reference": {
+                    "metrics": {
+                        "0": {
+                            "precision": 1.0,
+                            "recall": 1.0,
+                            "f1": 1.0,
+                            "support": 29.0
+                        },
+                        "1": {
+                            "precision": 1.0,
+                            "recall": 1.0,
+                            "f1": 1.0,
+                            "support": 25.0
+                        },
+                        "2": {
+                            "precision": 1.0,
+                            "recall": 1.0,
+                            "f1": 1.0,
+                            "support": 21.0
+                        }
+                    },
+                    "roc_aucs": null
+                }
+            }
+        },
+        {
+            "metric": "ClassificationQualityByFeatureTable",
+            "result": {
+                "target_name": "",
+                "columns": []
+            }
+        }
+    ],
+    "timestamp": "2024-07-17 12:29:31.730067"
+}
